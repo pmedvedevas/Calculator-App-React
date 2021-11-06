@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  background-color: #81c1c4;
+  max-width: 300px;
+  height: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding: 25px 35px;
+  border-radius: 10px;
+  user-select: none;
+  box-shadow: 0 0 10px 5px rgb(207, 207, 207);
 }
 
-.App-link {
-  color: #61dafb;
+#display-area{
+  width: 100%;
+  margin: 3vh 0;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(2, minmax(40px, auto));
+  word-wrap: break-word;
+  padding-bottom: 20px;
+  /* border-bottom: 3px solid rgba(255, 255, 255, 0.7); */
+  background-color: rgba(255,255,255, 0.9);
+  border-radius: 5px;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.currentInput {
+  text-align: right;
+  height: 60px;
+  font-size: xx-large;
+  line-height: 2;
+  word-wrap: break-word;
+  color: #383838;
+}
+
+.answerScreen {
+  text-align: right;
+  color: #94acad;
+}
+
+.keypad-btns {
+  display: grid;
+  grid: repeat(5, 70px) / repeat(4, 70px);
+  gap: 4px;
+
+}
+
+.keypad-btns button {
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background-color: #FEFBF3;
+  color: #555555;
+  font-size: x-large;
+  transition: all 200ms ease;
+}
+
+.keypad-btns .fun_btn {
+  background-color: #ffd884;
+}
+
+.num_btn:active,.fun_btn:active {
+  background-color: #9d9d9d;
+  color: #ffd884;
+}
+
+@media only screen and (min-width: 500px){
+  .num_btn:hover,.fun_btn:hover {
+      background-color: #9d9d9d;
+      color: #ffd884;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 500px){
+  body {
+      align-items: flex-start;
+      background-color: #81c1c4;
+  }
+  .container {
+      box-shadow: none;
   }
 }
